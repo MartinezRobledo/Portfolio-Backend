@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.gestion.portfolio.APIREST.ApirestApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 29.64 s - in com.gestion.portfolio.APIREST.ApirestApplicationTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 28.796 s - in com.gestion.portfolio.APIREST.ApirestApplicationTests
