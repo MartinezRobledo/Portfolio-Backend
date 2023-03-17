@@ -44,33 +44,33 @@ public class UserController {
     @Autowired
     private ExperienciaServicio experienciaService;
     
-    //Usuarios
-    @GetMapping("/usuarios")
-    public List<User> listarusuarios(){
-        return servicio.listarUsuarios();
-    }
-    
-    @GetMapping("/usuarios/{username}")
-    public User obtenerUsuario(@PathVariable("username") String username){
-        return servicio.obtenerUsuario(username);
-    }
-    
-    @PostMapping("/usuarios")
-    public User registrarUsuario(@RequestBody User usuario) throws Exception{
-        Set<UsuarioRol> usuarioRoles = new HashSet<>();
-        
-        Rol rol = new Rol();
-        rol.setRolId(2);
-        rol.setNombre("NORMAL");
-        
-        UsuarioRol usuarioRol = new UsuarioRol();
-        usuarioRol.setUsuario(usuario);
-        usuarioRol.setRol(rol);
-        
-        usuarioRoles.add(usuarioRol);
-        
-        return servicio.guardarUsuario(usuario, usuarioRoles);
-    }
+//    //Usuarios
+//    @GetMapping("/usuarios")
+//    public List<User> listarusuarios(){
+//        return servicio.listarUsuarios();
+//    }
+//    
+//    @GetMapping("/usuarios/{username}")
+//    public User obtenerUsuario(@PathVariable("username") String username){
+//        return servicio.obtenerUsuario(username);
+//    }
+//    
+//    @PostMapping("/usuarios")
+//    public User registrarUsuario(@RequestBody User usuario) throws Exception{
+//        Set<UsuarioRol> usuarioRoles = new HashSet<>();
+//        
+//        Rol rol = new Rol();
+//        rol.setRolId(2);
+//        rol.setNombre("NORMAL");
+//        
+//        UsuarioRol usuarioRol = new UsuarioRol();
+//        usuarioRol.setUsuario(usuario);
+//        usuarioRol.setRol(rol);
+//        
+//        usuarioRoles.add(usuarioRol);
+//        
+//        return servicio.guardarUsuario(usuario, usuarioRoles);
+//    }
 //    
 ////    @PutMapping("/usuarios/{username}")
 ////    public ResponseEntity<?> actualizarUsuario(@RequestBody User usuario, @PathVariable String username){
