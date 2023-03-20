@@ -1,23 +1,16 @@
-
 package com.gestion.portfolio.APIREST.controller;
 
 import com.gestion.portfolio.APIREST.modelo.Datos;
 import com.gestion.portfolio.APIREST.modelo.Educacion;
 import com.gestion.portfolio.APIREST.modelo.Experiencia;
 import com.gestion.portfolio.APIREST.modelo.Proyectos;
-import com.gestion.portfolio.APIREST.modelo.Rol;
 import com.gestion.portfolio.APIREST.modelo.Skills;
-import com.gestion.portfolio.APIREST.modelo.User;
-import com.gestion.portfolio.APIREST.modelo.UsuarioRol;
 import com.gestion.portfolio.APIREST.servicio.DatosServicio;
 import com.gestion.portfolio.APIREST.servicio.EducacionServicio;
 import com.gestion.portfolio.APIREST.servicio.ExperienciaServicio;
 import com.gestion.portfolio.APIREST.servicio.ProyectosServicio;
 import com.gestion.portfolio.APIREST.servicio.SkillsServicio;
-import com.gestion.portfolio.APIREST.servicio.UserServicio;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -31,8 +24,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class UserController {
-    @Autowired
-    private UserServicio servicio;
     @Autowired
     private DatosServicio dataService;
     @Autowired
@@ -137,16 +128,16 @@ public class UserController {
         return skillService.listarSkills();
     }
     
-    @GetMapping("/skills/{id}")
-    public ResponseEntity<Skills> obtenerSkill(@PathVariable Integer id){
-        try{
-            Skills skill = skillService.obtenerSkillPorId(id);
-            return new ResponseEntity<>(skill, HttpStatus.OK);
-        }
-        catch(Exception excepcion){
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
-    }
+//    @GetMapping("/skills/{id}")
+//    public ResponseEntity<Skills> obtenerSkill(@PathVariable Integer id){
+//        try{
+//            Skills skill = skillService.obtenerSkillPorId(id);
+//            return new ResponseEntity<>(skill, HttpStatus.OK);
+//        }
+//        catch(Exception excepcion){
+//            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+//        }
+//    }
     
     @PostMapping("/skills")
     public void registrarHabilidad(@RequestBody Skills skill){
@@ -180,16 +171,16 @@ public class UserController {
         return proyectosService.obtenerProyectos();
     }
     
-    @GetMapping("/proyectos/{id}")
-    public ResponseEntity<Proyectos> obtenerProyecto(@PathVariable Integer id){
-        try{
-            Proyectos proyecto = proyectosService.obtenerProyectoPorId(id);
-            return new ResponseEntity<>(proyecto, HttpStatus.OK);
-        }
-        catch(Exception excepcion){
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
-    }
+//    @GetMapping("/proyectos/{id}")
+//    public ResponseEntity<Proyectos> obtenerProyecto(@PathVariable Integer id){
+//        try{
+//            Proyectos proyecto = proyectosService.obtenerProyectoPorId(id);
+//            return new ResponseEntity<>(proyecto, HttpStatus.OK);
+//        }
+//        catch(Exception excepcion){
+//            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+//        }
+//    }
     
     @PostMapping("/proyectos")
     public void registrarProyecto(@RequestBody Proyectos proyecto){
@@ -223,16 +214,16 @@ public class UserController {
         return educacionService.obtenerFormacion();
     }
     
-    @GetMapping("/educacion/{id}")
-    public ResponseEntity<Educacion> obtenerFormacion(@PathVariable Integer id){
-        try{
-            Educacion formacion = educacionService.obtenerFormacionPorId(id);
-            return new ResponseEntity<>(formacion, HttpStatus.OK);
-        }
-        catch(Exception excepcion){
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
-    }
+//    @GetMapping("/educacion/{id}")
+//    public ResponseEntity<Educacion> obtenerFormacion(@PathVariable Integer id){
+//        try{
+//            Educacion formacion = educacionService.obtenerFormacionPorId(id);
+//            return new ResponseEntity<>(formacion, HttpStatus.OK);
+//        }
+//        catch(Exception excepcion){
+//            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+//        }
+//    }
     
     @PostMapping("/educacion")
     public void registrarFormacion(@RequestBody Educacion formacion){
@@ -271,16 +262,16 @@ public class UserController {
         return experienciaService.obtenerExperiencias();
     }
     
-    @GetMapping("/experiencia/{id}")
-    public ResponseEntity<Experiencia> obtenerExperiencia(@PathVariable Integer id){
-        try{
-            Experiencia formacion = experienciaService.obtenerExperienciaPorId(id);
-            return new ResponseEntity<>(formacion, HttpStatus.OK);
-        }
-        catch(Exception excepcion){
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
-    }
+//    @GetMapping("/experiencia/{id}")
+//    public ResponseEntity<Experiencia> obtenerExperiencia(@PathVariable Integer id){
+//        try{
+//            Experiencia formacion = experienciaService.obtenerExperienciaPorId(id);
+//            return new ResponseEntity<>(formacion, HttpStatus.OK);
+//        }
+//        catch(Exception excepcion){
+//            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+//        }
+//    }
     
     @PostMapping("/experiencia")
     public void registrarExperiencia(@RequestBody Experiencia experiencia){
